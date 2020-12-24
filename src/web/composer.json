@@ -1,0 +1,6 @@
+{
+    "type": "project",
+    "require": {
+        "mongodb/mongodb": "1.1.*"
+    }
+}
