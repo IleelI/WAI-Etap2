@@ -29,13 +29,11 @@
         $page_images_count = 10;
         $current_page = 0;
         $pages_count = floor($saved_images_count / $page_images_count);
-
         if (!isset($_GET['page'])) {
             $current_page = 0;
         } else {
             $current_page = $_GET['page'];
         }
-
         $array_offset = ($current_page === 0) ? 0 : $page_images_count * $current_page - 1;
         $current_images_array = array_slice($saved_images, $array_offset, $page_images_count);
         $current_page_first_index = $current_page * $page_images_count;
