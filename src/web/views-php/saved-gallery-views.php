@@ -1,6 +1,6 @@
-<?php session_start(); require '../views-html/header.html'; ?>
+<?php require './views-html/header.html'; ?>
     <div class="page-wrapper">
-<?php require '../views-php/navigation.php'; ?>
+<?php require './views-php/navigation.php'; ?>
     <div class="hero-container">
         <div class="hero">
             <div class="hero__content">
@@ -12,10 +12,10 @@
     </div>
     <div class="gallery-wrapper">
         <main id="gallery" class="gallery">
-            <form action="../delete_selected_images.php" method="post">
+            <form action="./delete_selected_images.php" method="post">
                 <div class="gallery__images">
-                    <?php require '../saved-gallery.php'?>
+                    <?php require './saved-gallery.php'?>
             </form>
         </main>
     </div>
-<?php require '../views-html/footer.html'; ?>
+<?php require './views-html/footer.html'; ?>

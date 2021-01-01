@@ -3,9 +3,9 @@
     $images_db = get_db()->images;
     $images_db = $images_db->find()->toArray();
     $saved_images = array();
-    $watermarked_path = '../images/watermarked/';
-    $miniatures_path = '../images/miniatures/';
-    $images = glob('../images/*.*');
+    $watermarked_path = './images/watermarked/';
+    $miniatures_path = './images/miniatures/';
+    $images = glob('./images/*.*');
 ?>
 <?php
     if (isset($_SESSION['save_images']) === false || empty($_SESSION['save_images'])) {
@@ -28,7 +28,7 @@
         $saved_images_count = count($saved_images);
         $page_images_count = 10;
         $current_page = 0;
-        $pages_count = round($saved_images_count / $page_images_count);
+        $pages_count = floor($saved_images_count / $page_images_count);
 
         if (!isset($_GET['page'])) {
             $current_page = 0;
@@ -75,10 +75,10 @@
             $prev_link = '';
             $next_link = '';
             if ($current_page >= 1) {
-                $prev_link = '<a class="link" href="saved-gallery-views.php?page='.($current_page-1).'">Previous</a>';
+                $prev_link = '<a class="link" href="saved?page='.($current_page-1).'">Previous</a>';
             }
-            if ($current_page < $pages_count - 1) {
-                $next_link = '<a class="link" href="saved-gallery-views.php?page='.($current_page+1).'">Next</a>';
+            if ($current_page < $pages_count) {
+                $next_link = '<a class="link" href="saved?page='.($current_page+1).'">Next</a>';
             }
             ?>
             <p>

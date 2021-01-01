@@ -69,10 +69,10 @@
         $_SESSION['isLoggedIn'] = true;
         $_SESSION['user_id'] = $current_user['_id'];
         $_SESSION['username'] = $current_user['login'];
-        header("Location: ./views-php/login-views.php?login=success");
+        header("Location: login?login=success");
     }
     else {
         $_SESSION['login_errors'] = $errors;
-        header("Location: login-views-html.php?login=failed");
+        header("Location: login?login=failed");
     }
 ?>

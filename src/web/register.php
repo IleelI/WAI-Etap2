@@ -89,12 +89,12 @@
     if (checkRegistration($input_data,$errors,$isValid,$user_db)) {
         addUserToDatabase($input_data,$user_db);
         $_SESSION['registration_success'] = true;
-        header("Location: register-views-html.php?registration=success");
+        header("Location: /register?registration=success");
     }
     else {
         $_SESSION['registration_success'] = false;
         $_SESSION['register_errors'] = $errors;
-        header("Location: register-views-html.php?registration=failed");
+        header("Location: /register?registration=failed");
     }
 
 ?>

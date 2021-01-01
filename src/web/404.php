@@ -1,5 +1,5 @@
 <?php include_once './views-html/header.html'; ?>
-<?php include_once './views-html/navigation.php'; ?>
+<?php include_once './views-php/navigation.php'; ?>
 
     <div class="hero-container">
         <div class="hero">

@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php require './views-html/header.html' ?>
     <div class="page-wrapper">
     <?php require './views-php/navigation.php' ?>

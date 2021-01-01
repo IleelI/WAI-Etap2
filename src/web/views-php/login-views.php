@@ -1,7 +1,6 @@
 <?php
-    session_start();
-    require_once '../views-html/header.html';
-    require_once './navigation.php';
+    require './views-html/header.html';
+    require './views-php/navigation.php';
 ?>
 <div class="page-wrapper">
     <div class="hero-container">
@@ -34,4 +33,4 @@
             </div>
         </div>
     </div>
-    <?php require_once '../views-html/footer.html';?>
+    <?php require_once './views-html/footer.html';?>

@@ -1,8 +1,8 @@
-<?php session_start();
-
+<?php
+    session_start();
     if (empty($_POST['photos']) === true) {
         $_SESSION['save_images_error'] = 'No images were selected!<br>';
-        header("Location: index.php?saved=false");
+        header("Location: /saved?saved=false");
     }
     else {
         $user_saved_photos = $_SESSION['save_images'];
@@ -14,6 +14,6 @@
                 }
             }
         }
-    header("Location: /views-php/saved-gallery-views.php?deleted=true");
+    header("Location: saved?deleted=true");
     }
 ?>

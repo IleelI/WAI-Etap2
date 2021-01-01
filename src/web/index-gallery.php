@@ -58,10 +58,10 @@
             $prev_link = '';
             $next_link = '';
             if ($current_page >= 1) {
-                $prev_link = '<a class="link" href="index.php?page='.($current_page-1).'">Previous </a>';
+                $prev_link = '<a class="link" href="/?page='.($current_page-1).'">Previous </a>';
             }
             if ($current_page < $pages_count) {
-                $next_link = '<a class="link" href="index.php?page='.($current_page+1).'"> Next</a>';
+                $next_link = '<a class="link" href="/?page='.($current_page+1).'"> Next</a>';
             }
             ?>
             <p>
