@@ -2,7 +2,7 @@
     session_start();
     if (isset($_SESSION['isLoggedIn']) === false || empty($_SESSION['isLoggedIn']) === true) {
         $_SESSION['save_images_error'] = 'Cannot save images to anonymous user!<br>';
-        header("Location: /saved?saved=false");
+        header("Location: /?saved=false");
     }
     else if (empty($_POST['photos']) === true) {
         $_SESSION['save_images_error'] = 'No images were selected!<br>';

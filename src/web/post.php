@@ -165,10 +165,11 @@
         }
         imagedestroy($new_image);
     }
-    function checkIfIsUploaded($image) {
-        $uploaded_images = glob('./images/*.*');
-        foreach ($uploaded_images as $curr_img) {
-            if (basename($curr_img) === $image->file_name) {
+    function checkIfIsUploaded($image, $db) {
+        $images = $db->find([]);
+        $images = $images->toArray();
+        foreach ($images as $curr_img) {
+            if ($curr_img['filename'] === $image->file_name) {
                 return 1;
             }
         }
@@ -193,7 +194,7 @@
     if ($image->isValid === true) {
         require './db.php';
         $images = get_db()->images;
-        if (checkIfIsUploaded($image)) {
+        if (checkIfIsUploaded($image, $images)) {
             $_SESSION['file_is_valid'] = false;
             $_SESSION['file_errors'][$image->errors_count] = "Same File has already been uploaded!</br>";
             header("Location: /?upload_state=0");
